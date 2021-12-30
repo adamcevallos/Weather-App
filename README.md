@@ -1,1 +1,1 @@
-# Weather-App
+App that displays the current weather and 7-day forecast for a searchable location.
