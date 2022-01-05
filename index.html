@@ -4,10 +4,33 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="styles.css">
+        <title>Weather App</title>
     </head>
 
     <body>
-        <script src="./src/index.js"></script>
+
+        <div id="container">
+            
+            <nav>
+                <div id="logo"></div>
+                <div class="search bar"></div>
+                <div id="unit-toggle"></div>
+            </nav>
+
+            <div id="current">
+                <h3 id="city-name"></h3>
+                <h3 id="current-temp"></h3>
+                <h3 id="city-name"></h3>
+            </div>
+
+            <div id="hourly"></div>
+
+            <div id="daily"></div>
+
+        </div>
+
+        <script src="main.js"></script>
+
     </body>
 
 </html>
