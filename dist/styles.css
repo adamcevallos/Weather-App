@@ -98,60 +98,57 @@ html, body {
 }
 
 .daily-forecast-ctr {
-    padding: 1em;
-    padding-bottom: 0;
+    padding-top: 1em;
     display: flex;
     font-size: 2em; 
     align-items: top;
+    justify-content: center;
     column-gap: 3em;
     border-right: 3px solid black;
+}   
+
+.daily-forecast-ctr > * > img { 
+    font-size: 2em;
+    margin-bottom: 0.155em;
 }
 
+.daily-forecast-ctr > * > p { margin-bottom: 1.35em; }
+
+
 .weather-info-ctr {
-    padding: 1em 0;
+    padding: 2em 0;
     display: flex;
     justify-content: center;
     column-gap: 3em;
     font-size: 2em;
 }
 
-.weather-info-ctr > p { 
-    font-size: 3em; 
+.weather-info-ctr > * > h4 {
+    margin: 0;
 }
 
-#days-column > p {
-    border-bottom: 1px solid black;
+.weather-info-ctr > * > p {
+    margin-top: 0.1em;
 }
 
-#low-column > p { color: rgb(148, 148, 148); }
+#low-column > p { 
+    color: rgb(148, 148, 148); 
+}
 
-#weather-column > p {
-    font-size: 0.97em;
+#weather-column {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.85em;
+    row-gap: 0.7em;
 }
 
 form > input {
     height: 1.5em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.left-arrow, .right-arrow {
+    user-select: none;
+}
 
 /* Toggle button */
 

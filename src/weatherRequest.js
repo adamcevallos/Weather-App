@@ -23,8 +23,6 @@ function verifyQuery(query) {
 
 async function getCoordinatesByUrl(url) {
 
-    console.log(url);
-
     try {
         const response = await fetch (url);
         const data = await response.json();
@@ -94,6 +92,7 @@ function processWeatherObject(weatherObject, type="current") {
                 "sunrise": unixToTimestamp(weatherObject['sunrise']),
                 "sunset": unixToTimestamp(weatherObject['sunset']),
                 "weather": weatherObject['weather'][0]['main'],
+                "weather-icon": weatherObject['weather'][0]['icon'],
                 "wind_speed": weatherObject['wind_speed'],
                 "wind_degrees": weatherObject['wind_deg'],
                 "wind_direction": degreeToDirection(weatherObject['wind_deg']),
@@ -104,13 +103,15 @@ function processWeatherObject(weatherObject, type="current") {
         } else if (type == "hourly") {
             weatherData = {
                 "temp": weatherObject["temp"],
-                "weather": weatherObject['weather'][0]['main'] 
+                "weather": weatherObject['weather'][0]['main'] ,
+                "weather-icon": weatherObject['weather'][0]['icon']
             }
         } else if (type == "daily") {
             weatherData = {
                 "high": weatherObject["temp"]["max"],
                 "low": weatherObject["temp"]["min"],
-                "weather": weatherObject['weather'][0]['main'] 
+                "weather": weatherObject['weather'][0]['main'],
+                "weather-icon": weatherObject['weather'][0]['icon']
             }
         }
 
@@ -179,11 +180,11 @@ export async function getWeather(query) {
         const lon = coordinates['lon'];
 
         const forecastData = await getForecastData(lat, lon);
-        console.log(forecastData)
+        // console.log(forecastData);
         let parsedForecastData = parseForecastData(forecastData);
         parsedForecastData['name'] = coordinates['name'];
 
-        console.log(parsedForecastData);
+        // console.log(parsedForecastData);
         return parsedForecastData
 
     } catch (err) {

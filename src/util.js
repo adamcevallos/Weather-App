@@ -1,13 +1,3 @@
-const weatherIcons = new Map([
-    ["rain", "&#x1F327"],
-    ["lightning", "&#x1F329"],
-    ["sunny", "&#9728;&#65039"],
-    ["mostly sunny", "&#x1F324"],
-    ["mostly cloudy", "&#x1F325"],
-    ["snow", "&#x1F327"],
-    ["cloudy", "&#9729;&#65039"],
-])
-
 // Used for daily forecast labelling
 
 const daysOfWeek = new Map([
@@ -19,6 +9,26 @@ const daysOfWeek = new Map([
     [5,"Friday"],
     [6,"Saturday"],
 ])
+
+function twentyFourTimeToTwelve(time) {
+
+    time = time.toString();
+    let split = time.split(":");
+    let hour = split[0];
+    let minutes = split[1] || '';
+
+    if (hour == 0) hour = "12";
+    let hourInt = parseInt(hour);
+    let suffix = (hourInt >= 12) ? "PM" : "AM";
+    if (hourInt > 12) hourInt -= 12;
+
+    if (minutes) {
+        return hourInt.toString() + ':' + minutes + suffix;
+    } else {
+        return hourInt.toString() + suffix;
+    }
+    
+}
 
 // converts unix timestamp to 24 hour time format
 
@@ -81,5 +91,5 @@ export {
     daysOfWeek,
     unixToTimestamp,
     degreeToDirection,
-    weatherIcons
+    twentyFourTimeToTwelve
 }
