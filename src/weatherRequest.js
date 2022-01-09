@@ -97,6 +97,9 @@ function processWeatherObject(weatherObject, type="current") {
                 "wind_speed": weatherObject['wind_speed'],
                 "wind_degrees": weatherObject['wind_deg'],
                 "wind_direction": degreeToDirection(weatherObject['wind_deg']),
+                "uvi": weatherObject["uvi"],
+                "visibility": weatherObject["visibility"],
+                "dew point": weatherObject["dew_point"],
             }
         } else if (type == "hourly") {
             weatherData = {
@@ -176,6 +179,7 @@ export async function getWeather(query) {
         const lon = coordinates['lon'];
 
         const forecastData = await getForecastData(lat, lon);
+        console.log(forecastData)
         let parsedForecastData = parseForecastData(forecastData);
         parsedForecastData['name'] = coordinates['name'];
 

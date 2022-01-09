@@ -1,3 +1,15 @@
+const weatherIcons = new Map([
+    ["rain", "&#x1F327"],
+    ["lightning", "&#x1F329"],
+    ["sunny", "&#9728;&#65039"],
+    ["mostly sunny", "&#x1F324"],
+    ["mostly cloudy", "&#x1F325"],
+    ["snow", "&#x1F327"],
+    ["cloudy", "&#9729;&#65039"],
+])
+
+// Used for daily forecast labelling
+
 const daysOfWeek = new Map([
     [0,"Sunday"],
     [1,"Monday"],
@@ -68,5 +80,6 @@ function degreeToDirection(degree) {
 export {
     daysOfWeek,
     unixToTimestamp,
-    degreeToDirection
+    degreeToDirection,
+    weatherIcons
 }
