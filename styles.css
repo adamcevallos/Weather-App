@@ -1,0 +1,219 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-family: 'Bebas Neue', cursive;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: 5rem 20rem 13rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'search search'
+                         'current current'
+                         'hourly hourly'
+                         'daily info'
+}
+
+#container > .search-ctr {
+    grid-area: search;
+    display: flex;
+    column-gap: 15em;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em 0 1em;
+    background-color: rgb(236, 235, 235);
+}
+
+#container > .current-forecast-ctr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: current;
+    background-color: rgb(76, 78, 180);
+    text-align: center;
+}
+
+#container > .hourly-forecast-ctr {
+    grid-area: hourly;
+    background-color: rgb(76, 78, 180);
+}
+
+#container > .daily-forecast-ctr {
+    grid-area: daily;
+}
+
+#container > .weather-info-ctr {
+    grid-area: info;
+}
+
+
+.search-ctr > .logo {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.search-ctr > #unit-toggle {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.search-ctr > #unit-toggle > span {
+    font-size: 2em;
+}
+
+.current-forecast-ctr > h3 { font-size: 3em; }
+.current-forecast-ctr > h1 { font-size: 5em; }
+.current-forecast-ctr > p, .current-forecast-ctr > div > span { font-size: 1.5em; }
+.current-forecast-ctr > * { margin: 0.1em; }
+
+.hourly-forecast-ctr {
+    align-items: center;
+    justify-content: center;
+    column-gap: 5em;
+    display: flex;
+    padding: 2em 4em;
+}
+
+.hourly-forecast-ctr > span {
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.hour-data {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 9em;
+    width: 6em;
+    padding: 0.5em;
+}
+
+.hour-data > * {
+    margin: 0.2em 0;
+    font-size: 2em
+}
+
+.daily-forecast-ctr {
+    padding: 1em;
+    padding-bottom: 0;
+    display: flex;
+    font-size: 2em; 
+    align-items: top;
+    column-gap: 3em;
+    border-right: 3px solid black;
+}
+
+.weather-info-ctr {
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    column-gap: 3em;
+    font-size: 2em;
+}
+
+.weather-info-ctr > p { 
+    font-size: 3em; 
+}
+
+#days-column > p {
+    border-bottom: 1px solid black;
+}
+
+#low-column > p { color: rgb(148, 148, 148); }
+
+#weather-column > p {
+    font-size: 0.97em;
+}
+
+form > input {
+    height: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Toggle button */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196F3;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
